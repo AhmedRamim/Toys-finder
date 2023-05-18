@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../public/logo1.png'
+import { AuthContext } from '../providers/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(result => { })
+            .catch(err => console.log(err))
+    }
+    console.log(user);
     return (
-        <div className="navbar my-8">
+        <div className="navbar my-8 justify-between">
             <div className="flex justify-between">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,27 +35,42 @@ const Navbar = () => {
                         >
                             All Toys
                         </NavLink>
-                        <NavLink
-                            to="/alltoys"
+                        {user && <>
+                            <NavLink
+                                to="/alltoys"
+                                className={({ isActive }) =>
+                                    isActive ? "text-blue-500" : ""
+                                }
+                            >
+                                My Toys
+                            </NavLink>
+                            <NavLink
+                                to="/alltoys"
+                                className={({ isActive }) =>
+                                    isActive ? "text-blue-500" : ""
+                                }
+                            >
+                                Add Toys
+                            </NavLink>
+                        </>}
+                        {
+                        user && user ? <NavLink onClick={handleLogOut}
+                        >
+                            LogOut
+                        </NavLink> : <NavLink
+                            to="/login"
                             className={({ isActive }) =>
                                 isActive ? "text-blue-500" : ""
                             }
                         >
-                            My Toys
+                            Login
                         </NavLink>
-                        <NavLink
-                            to="/alltoys"
-                            className={({ isActive }) =>
-                                isActive ? "text-blue-500" : ""
-                            }
-                        >
-                            Add Toys
-                        </NavLink>
+                    }
                     </ul>
                 </div>
                 <Link to='/' className='flex gap-2 items-center text-xl font-bold'>
                     <img className='w-16' src={logo} alt="" />
-                    <p>Toy Cars Finder</p>
+                    <p>Toy Cars </p>
                 </Link>
             </div>
             <div className="navbar-center hidden ml-72 lg:flex">
@@ -68,29 +91,43 @@ const Navbar = () => {
                     >
                         All Toys
                     </NavLink>
-                    <NavLink
-                        to="/alltoys"
-                        className={({ isActive }) =>
-                            isActive ? "text-blue-500" : ""
-                        }
-                    >
-                        My Toys
-                    </NavLink>
-                    <NavLink
-                        to="/alltoys"
-                        className={({ isActive }) =>
-                            isActive ? "text-blue-500" : ""
-                        }
-                    >
-                        Add Toys
-                    </NavLink>
-
+                    {user && <>
+                            <NavLink
+                                to="/alltoys"
+                                className={({ isActive }) =>
+                                    isActive ? "text-blue-500" : ""
+                                }
+                            >
+                                My Toys
+                            </NavLink>
+                            <NavLink
+                                to="/alltoys"
+                                className={({ isActive }) =>
+                                    isActive ? "text-blue-500" : ""
+                                }
+                            >
+                                Add Toys
+                            </NavLink>
+                        </>}
+                    {
+                        user && user ? <NavLink onClick={handleLogOut}
+                        >
+                            LogOut
+                        </NavLink> : <NavLink
+                            to="/login"
+                            className={({ isActive }) =>
+                                isActive ? "text-blue-500" : ""
+                            }
+                        >
+                            Login
+                        </NavLink>
+                    }
 
 
                 </ul>
             </div>
-            <div className="w-10 rounded-full ml-12 lg:ml-96 navbar-end">
-                <img src={logo} />
+            <div className="w-10 rounded-full ml-12 lg:ml-80 navbar-end">
+                <img className='rounded-full w-10' title={user?.displayName} src={user?.photoURL} />
             </div>
 
         </div>
