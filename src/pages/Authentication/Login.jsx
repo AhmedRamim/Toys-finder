@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import login from '../../../public/login.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 const Login = () => {
     const {signIn,googleUser} = useContext(AuthContext)
     // console.log(user);
+    const navigate = useNavigate()
+    const pathname = location.state?.from?.pathname || '/'
 
     const handleGoogle = () => {
         googleUser()
