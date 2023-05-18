@@ -36,6 +36,7 @@ const Register = () => {
 
             })
             .catch(error => {
+                console.log(error);
                 setError(error.message)
             })
 
@@ -59,15 +60,15 @@ const Register = () => {
 
         <div className='w-[80%] mx-auto'>
             
-            <div className="hero min-h-screen ">
+            <div className="hero  min-h-screen ">
                 <div className="hero-content flex-col mt-6">
                     <div className="">
                         <h1 className="text-5xl font-bold my-6">Register now!</h1>
                         
                     </div>
                     <ToastContainer></ToastContainer>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleSubmit} className="card-body">
+                    <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
+                        <form onSubmit={handleSubmit} className="card-body w-[600px]">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -96,11 +97,12 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>
                             </div>
+                            <button onClick={handleGoogle} className='btn btn-outline my-2'> <FaGoogle></FaGoogle>  <span className='ml-4'>Google</span></button>
                             <p className='text-error'>{error}</p>
 
                             <p>Already have an account? <Link className='btn btn-link' to='/login'>Login</Link></p>
                         </form>
-                        <button onClick={handleGoogle} className='btn btn-outline my-2'> <FaGoogle></FaGoogle>  <span className='ml-4'>Google</span></button>
+                        
                        
                     </div>
                 </div>

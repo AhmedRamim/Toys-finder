@@ -2,11 +2,21 @@ import React, { useContext } from 'react';
 import login from '../../../public/login.svg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 const Login = () => {
-    const {signIn} = useContext(AuthContext)
+    const {signIn,googleUser} = useContext(AuthContext)
     // console.log(user);
 
-
+    const handleGoogle = () => {
+        googleUser()
+            .then(result => {
+                // console.log(result.user);
+                navigate(pathname)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
     const handleLogin = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -47,7 +57,8 @@ const Login = () => {
                             <input type="submit" className="btn btn-primary" value="Login" />
                         </div>
                     </form>
-                    <h1 className='text-center mb-4'>New to Cars Doctor? <Link className=' font-bold text-orange-500 ' to='/register'>Sign Up</Link></h1>
+                    <button onClick={handleGoogle} className='btn btn-outline my-2 mx-6'> <FaGoogle></FaGoogle>  <span className='ml-4'>Google</span></button>
+                    <h1 className='text-center mb-4'>New to Toy Cars? <Link className=' font-bold  ' to='/register'>Sign Up</Link></h1>
                 </div>
             </div>
         </div>
