@@ -5,13 +5,13 @@ const Banner = () => {
         <div data-interval='6000' data-wrap='true' data-pause='true' className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src="https://i.ibb.co/jZFWstq/slider1.jpg" className="w-full" />
-                <div className='w-[352px] h-[280px] border-red-500 border-4 absolute  right-24 top-[135px]'></div>
-                <span className='absolute right-32 top-[160px] w-auto max-w-[352px] bg-[#222] p-4 rounded'>
-                    
+                <div className=' md:w-[352px] md:h-[280px] border-red-500 border-4 absolute  right-24 top-[135px]'></div>
+                <span className='absolute md:right-32 md:top-[160px] w-auto md:max-w-[352px] md:bg-[#222] p-4 rounded text-center ml-20 '>
+
                     <div className='text-center space-y-3'>
-                        <h1 className='text-7xl text-white  font-semibold'>REMOTE CAR</h1>
+                        <h1 className='md:text-7xl text-white  font-semibold'>REMOTE CAR</h1>
                         <div>
-                            <p className='text-[#a1a1a1]'>get up to 45% off *only</p>
+                            <p className='md:bg-transparent bg-gray-300 rounded-lg p-2 md:text-[#a1a1a1]'>get up to 40% off *only</p>
                             <div>
                                 <button className='btn my-3'>Shop Now</button>
                             </div>
@@ -25,13 +25,13 @@ const Banner = () => {
             </div>
             <div id="slide2" className="carousel-item relative w-full">
                 <img src="https://i.ibb.co/ZN6vmsH/slider2.jpg" className="w-full" />
-                <div className='w-[352px] h-[280px] border-red-500 border-4 absolute  left-24 top-[135px]'></div>
-                <span className='absolute left-32 top-[160px] w-auto max-w-[352px] bg-[#222] p-4 rounded'>
+                <div className=' md:w-[352px] md:h-[280px] border-red-500 border-4 absolute  left-24 top-[135px]'></div>
+                <span className='absolute md:left-20 md:top-[160px] w-auto md:max-w-[352px] md:bg-[#222] p-4 rounded text-center ml-20 '>
                     
                     <div className='text-center space-y-3'>
-                        <h1 className='text-7xl text-white  font-semibold'>NEW ARRIVAL</h1>
+                        <h1 className='md:text-7xl text-white  font-semibold'>NEW ARRIVAL</h1>
                         <div>
-                            <p className='text-[#a1a1a1]'>get up to 50% off *only</p>
+                            <p className='md:bg-transparent  rounded-lg p-2 text-[#a1a1a1]'>get up to 30% off *only</p>
                             <div>
                                 <button className='btn my-3'>Shop Now</button>
                             </div>
@@ -45,13 +45,13 @@ const Banner = () => {
             </div>
             <div id="slide3" className="carousel-item relative w-full">
                 <img src="https://i.ibb.co/wRRZd9s/slider3.jpg" className="w-full" />
-                <div className='w-[352px] h-[280px] border-red-500 border-4 absolute  right-24 top-[135px]'></div>
-                <span className='absolute right-32 top-[160px] w-auto max-w-[352px] bg-[#222] p-4 rounded'>
-                    
+                <div className=' md:w-[352px] md:h-[280px] border-red-500 border-4 absolute  right-24 top-[135px]'></div>
+                <span className='absolute md:right-32 md:top-[160px] w-auto md:max-w-[352px] md:bg-[#222] p-4 rounded text-center ml-20 '>
+
                     <div className='text-center space-y-3'>
-                        <h1 className='text-7xl text-white  font-semibold'>BATTERY CAR</h1>
+                        <h1 className='md:text-7xl text-white  font-semibold'>BATTERY CAR</h1>
                         <div>
-                            <p className='text-[#a1a1a1]'>get up to 30% off *only</p>
+                            <p className='md:bg-transparent bg-gray-300 rounded-lg p-2 md:text-[#a1a1a1]'>get up to 30% off *only</p>
                             <div>
                                 <button className='btn my-3'>Shop Now</button>
                             </div>
@@ -63,8 +63,8 @@ const Banner = () => {
                     <a href="#slide1" className="btn btn-circle">❯</a>
                 </div>
             </div>
-            
-        </div>     
+
+        </div>
     );
 };
 

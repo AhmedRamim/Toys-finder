@@ -34,6 +34,10 @@ import Blog from "../pages/Blog/Blog";
         {
           path:'/addToys',
           element:<AddToys></AddToys>
+        },
+        {
+          path:'/alltoys',
+          
         }
       ]
     },
