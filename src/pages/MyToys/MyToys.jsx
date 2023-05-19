@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FaPen, FaTrashAlt } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
@@ -45,43 +46,48 @@ const MyToys = () => {
 
     useEffect(() => {
         let apiUrl = `http://localhost:5000/myToys/${user?.email}`;
-    
-        if (sortBy) {
-          apiUrl += `?sortBy=${sortBy}`;
-        }
-    
-        fetch(apiUrl)
-          .then((res) => res.json())
-          .then((data) =>  {
-            // Parse price values as integers
-            const parsedData = data.map((toy) => ({
-              ...toy,
-              price: parseInt(toy.price),
-            }));
-    
-            // Sort toys based on price
-            if (sortBy === 'lower') {
-              parsedData.sort((a, b) => a.price - b.price);
-            } else if (sortBy === 'higher') {
-              parsedData.sort((a, b) => b.price - a.price);
-            }
-    
-            setMyToys(parsedData);
-          });
-      }, [user,control, sortBy]);
 
-      const handleSortByChange = (e) => {
+        if (sortBy) {
+            apiUrl += `?sortBy=${sortBy}`;
+        }
+
+        fetch(apiUrl)
+            .then((res) => res.json())
+            .then((data) => {
+                // Parse price values as integers
+                const parsedData = data.map((toy) => ({
+                    ...toy,
+                    price: parseInt(toy.price),
+                }));
+
+                // Sort toys based on price
+                if (sortBy === 'lower') {
+                    parsedData.sort((a, b) => a.price - b.price);
+                } else if (sortBy === 'higher') {
+                    parsedData.sort((a, b) => b.price - a.price);
+                }
+
+                setMyToys(parsedData);
+            });
+    }, [user, control, sortBy]);
+
+    const handleSortByChange = (e) => {
         setSortBy(e.target.value);
-      };
+    };
+    const handleUpdate = (id) => {
+
+
+    }
 
     return (
         <div className="overflow-x-auto my-12">
             <div className='flex justify-end mb-12'>
-                <select value={sortBy}  onChange={handleSortByChange} className='border-4 p-2 border-success'>
+                <select value={sortBy} onChange={handleSortByChange} className='border-4 p-2 border-success'>
                     <option value="">Sort By</option>
                     <option value="lower">Lower Price</option>
                     <option value="higher">Higher Price</option>
                 </select>
+
             </div>
             <table className="table w-full">
                 {/* head*/}
@@ -108,7 +114,9 @@ const MyToys = () => {
                                 <td>${toy.price}</td>
                                 <td>{toy.quantity}</td>
                                 <td className='flex gap-6 items-center'>
-                                    <span className='bg-warning p-4 rounded-2xl cursor-pointer text-white'><FaPen /></span>
+                                    <Link className='bg-warning p-4 rounded-2xl cursor-pointer text-white' to={`/updateToy/${toy._id}`}>
+                                        <FaPen />
+                                    </Link>
                                     <span onClick={() => handleDelete(toy._id)} className='bg-red-600 text-white p-4 rounded-2xl cursor-pointer'><FaTrashAlt /></span>
                                 </td>
                             </tr>
@@ -124,7 +132,7 @@ const MyToys = () => {
 export default MyToys;
 
 
-
+{/* <span onClick={() => handleUpdate(toy._id)} className='bg-warning p-4 rounded-2xl cursor-pointer text-white'><FaPen /></span> */ }
 
 
 
