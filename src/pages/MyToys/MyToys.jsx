@@ -6,7 +6,8 @@ import Swal from 'sweetalert2';
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     const [myToys, setMyToys] = useState([])
-    const [control ,setControl] = useState(false)
+    const [control, setControl] = useState(false)
+    const [sortBy, setSortBy] = useState('');
 
     const handleDelete = id => {
         console.log(id);
@@ -20,8 +21,8 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toy/${id}`,{
-                    method:'DELETE'
+                fetch(`http://localhost:5000/toy/${id}`, {
+                    method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -43,13 +44,45 @@ const MyToys = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
-            .then(res => res.json())
-            .then(data => setMyToys(data))
-    }, [user,control])
+        let apiUrl = `http://localhost:5000/myToys/${user?.email}`;
+    
+        if (sortBy) {
+          apiUrl += `?sortBy=${sortBy}`;
+        }
+    
+        fetch(apiUrl)
+          .then((res) => res.json())
+          .then((data) =>  {
+            // Parse price values as integers
+            const parsedData = data.map((toy) => ({
+              ...toy,
+              price: parseInt(toy.price),
+            }));
+    
+            // Sort toys based on price
+            if (sortBy === 'lower') {
+              parsedData.sort((a, b) => a.price - b.price);
+            } else if (sortBy === 'higher') {
+              parsedData.sort((a, b) => b.price - a.price);
+            }
+    
+            setMyToys(parsedData);
+          });
+      }, [user,control, sortBy]);
+
+      const handleSortByChange = (e) => {
+        setSortBy(e.target.value);
+      };
 
     return (
         <div className="overflow-x-auto my-12">
+            <div className='flex justify-end mb-12'>
+                <select value={sortBy}  onChange={handleSortByChange} className='border-4 p-2 border-success'>
+                    <option value="">Sort By</option>
+                    <option value="lower">Lower Price</option>
+                    <option value="higher">Higher Price</option>
+                </select>
+            </div>
             <table className="table w-full">
                 {/* head*/}
                 <thead>
