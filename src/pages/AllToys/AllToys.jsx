@@ -1,20 +1,35 @@
 import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const AllToys = () => {
     const [alltoys, setAlltoys] = useState([])
+    const [searchText, setSearchText] = useState('')
     useEffect(() => {
         fetch('http://localhost:5000/alltoys')
             .then(res => res.json())
             .then(data => setAlltoys(data))
     }, [])
-    console.log(alltoys);
+    const handleSearch = (text) => {
+        if (text.length === 0) {
+           return Swal.fire({
+                title: 'No Search Input!',
+                text: 'Please Input Search Text At least one Character',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            })
+        }
+        fetch(`http://localhost:5000/toySearchByName/${text}`)
+            .then(res => res.json())
+            .then(data => setAlltoys(data))
+    }
+    // console.log(alltoys);
     return (
         <div>
             <div className='text-center'>
-                <input type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
-                <button className='btn btn-success ml-2 text-white'>Search</button>
+                <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
+                <button onClick={() => handleSearch(searchText)} className='btn btn-success ml-2 text-white'>Search</button>
             </div>
             <div className="overflow-x-auto my-12">
                 <table className="table w-full">

@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     const [myToys, setMyToys] = useState([])
+    const [control ,setControl] = useState(false)
 
     const handleDelete = id => {
         console.log(id);
@@ -24,6 +25,7 @@ const MyToys = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
+                        setControl(!control)
                         console.log(data);
                         if (data.deletedCount === 1) {
                             Swal.fire(
@@ -44,7 +46,7 @@ const MyToys = () => {
         fetch(`http://localhost:5000/myToys/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyToys(data))
-    }, [user])
+    }, [user,control])
 
     return (
         <div className="overflow-x-auto my-12">
