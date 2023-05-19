@@ -8,6 +8,8 @@ import Login from "../pages/Authentication/Login";
 import Register from "../pages/Authentication/Register";
 import AddToys from "../pages/AddToys/AddToys";
 import Blog from "../pages/Blog/Blog";
+import AllToys from "../pages/AllToys/AllToys";
+import SingleToyDetails from "../pages/SingleToyDetails/SingleToyDetails";
 
 
   const Router = createBrowserRouter([
@@ -37,7 +39,12 @@ import Blog from "../pages/Blog/Blog";
         },
         {
           path:'/alltoys',
-          
+          element:<AllToys></AllToys>
+        },
+        {
+          path:'/singleToys/:id',
+          element:<SingleToyDetails></SingleToyDetails>,
+          loader:() => fetch(`http://localhost:5000/alltoys`)
         }
       ]
     },

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddToys = () => {
     const {user} = useContext(AuthContext)
@@ -27,7 +28,14 @@ const AddToys = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your Toy are added',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
         })
         
 
@@ -40,7 +48,7 @@ const AddToys = () => {
             <h1 className='text-5xl font-semibold text-center mb-12'>Add A Toy</h1>
           <div className="flex flex-wrap mb-4">
             <div className="w-1/2 pr-2">
-              <label className="block text-sm font-bold mb-2" htmlFor="name">Name:</label>
+              <label className="block text-sm font-bold mb-2" htmlFor="name">Toy Name:</label>
               <input className="w-full px-3 py-2 border rounded"  type="text" id="name" name="name" required />
             </div>
             <div className="w-1/2 pl-2">

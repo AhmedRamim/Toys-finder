@@ -10,7 +10,7 @@ const Navbar = () => {
             .then(result => { })
             .catch(err => console.log(err))
     }
-    console.log(user);
+    // console.log(user);
     return (
         <div className="navbar my-8 justify-between">
             <div className="flex justify-between">
