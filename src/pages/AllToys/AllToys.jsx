@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
+    useTitle("Toy's Finder" + ' - '+'AllToys')
     const [alltoys, setAlltoys] = useState([])
     const [searchText, setSearchText] = useState('')
     useEffect(() => {

@@ -2,8 +2,10 @@ import React from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
 import { useLoaderData, useParams } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const SingleToyDetails = () => {
+    useTitle("Toy's Finder" + ' - '+'singleToy')
     const allData = useLoaderData()
     const { id } = useParams()
     const singleData = allData && allData.find(data => data._id === id)

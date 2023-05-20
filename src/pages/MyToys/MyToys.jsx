@@ -3,8 +3,10 @@ import { FaPen, FaTrashAlt } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const MyToys = () => {
+    useTitle("Toy's Finder" + ' - '+'MyToys')
     const { user } = useContext(AuthContext)
     const [myToys, setMyToys] = useState([])
     const [control, setControl] = useState(false)
@@ -99,7 +101,7 @@ const MyToys = () => {
                         <th>Sub-category</th>
                         <th>Price</th>
                         <th>Available Quantity</th>
-                        <th>Details</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>

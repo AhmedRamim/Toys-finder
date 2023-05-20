@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const UpdatedToy = () => {
+    useTitle("Toy's Finder" + ' - '+'updateToy')
     const {user} = useContext(AuthContext)
     const allData = useLoaderData()
     const handleAddToy = (e) => {

@@ -40,7 +40,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
         },
         {
           path:'/addToys',
-          element:<AddToys></AddToys>
+          element:<PrivateRoute><AddToys></AddToys></PrivateRoute>
         },
         {
           path:'/alltoys',
@@ -57,7 +57,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
         },
         {
           path:'/updateToy/:id',
-          element:<UpdatedToy></UpdatedToy>,
+          element:<PrivateRoute><UpdatedToy></UpdatedToy></PrivateRoute>,
           loader:({params}) => fetch(`http://localhost:5000/updateToy/${params.id}`)
         }
       ]
