@@ -5,7 +5,7 @@ const Blog = () => {
     useTitle("Toy's Finder" + ' - '+'blog')
     return (
         <div className='my-20 space-y-12'>
-            <div className='space-y-3 shadow-xl rounded-lg p-4'>
+            <div className='space-y-3 shadow-xl rounded-lg p-4 bg-white'>
                 <h1 className='text-3xl font-semibold'>What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>
                 <p>An access token is a short-lived credential that allows a user or application to access protected resources in an application. It is obtained during the authentication process and needs to be included with each request to the server.
                     <br />
@@ -15,7 +15,7 @@ const Blog = () => {
                     <br />
                     By securely storing the refresh token and properly handling the access token, the client can maintain authorized access to resources without the user needing to repeatedly log in.</p>
             </div>
-            <div className='space-y-3 shadow-xl rounded-lg p-4'>
+            <div className='space-y-3 shadow-xl rounded-lg p-4 bg-white'>
                 <h1 className='text-3xl font-semibold'>Compare SQL and NoSQL databases?</h1>
                 <p>SQL (Structured Query Language) databases are based on the relational model and use SQL as the query language. They have a predefined schema, handle structured data with well-defined relationships, and are suitable for complex queries and data integrity. SQL databases are vertically scalable and prioritize data consistency.
                     <br /><br />
@@ -23,7 +23,7 @@ const Blog = () => {
 
                     In summary, SQL databases are good for structured data, complex relationships, and strong consistency, while NoSQL databases excel with unstructured data, scalability, and availability in distributed systems.</p>
             </div>
-            <div className='space-y-3 shadow-xl rounded-lg p-4'>
+            <div className='space-y-3 shadow-xl rounded-lg p-4 bg-white'>
                 <h1 className='text-3xl font-semibold'>What is express js? What is Nest JS ?</h1>
                 <p>Express.js is a lightweight and flexible web application framework that runs on Node.js. It simplifies the process of building web applications and APIs by providing an easy-to-use and minimalist approach. With Express.js, developers can handle routes, middleware, and HTTP requests with ease. It is known for its simplicity, speed, and extensive middleware ecosystem, making it a popular choice for building server-side applications.
 <br />
@@ -31,7 +31,7 @@ const Blog = () => {
 <br />
                     In summary, Express.js focuses on simplicity and flexibility, allowing developers to quickly build web applications, while NestJS provides a more structured and opinionated framework with TypeScript support, suitable for larger projects and teams that prioritize maintainability and scalability.</p>
             </div>
-            <div className='space-y-3 shadow-xl rounded-lg p-4'>
+            <div className='space-y-3 shadow-xl rounded-lg p-4 bg-white'>
                 <h1 className='text-3xl font-semibold'>What is MongoDB aggregate and how does it work?</h1>
                 <p>The MongoDB aggregation framework is a powerful tool for performing advanced data processing and analysis within the database. It works by using a pipeline of stages, each stage performing a specific operation on the data and passing the results to the next stage. The pipeline starts with a matching stage that filters the documents based on specified criteria. Then, the projection stage allows shaping the output by including or excluding fields or adding computed fields. The grouping stage groups documents together based on a key and performs aggregations within each group using operators like $sum, $avg, $max, and more. The sorting stage orders the documents, while the limiting and skipping stages control the number of documents returned. The $lookup stage allows for left outer joins with other collections, and the $unwind stage deconstructs array fields into multiple documents. MongoDB provides a wide range of aggregation operators to perform computations and transformations within the pipeline. By leveraging these stages and operators, you can construct complex queries to extract meaningful insights and perform advanced data analysis efficiently within MongoDB.</p>
             </div>

@@ -76,10 +76,7 @@ const MyToys = () => {
     const handleSortByChange = (e) => {
         setSortBy(e.target.value);
     };
-    const handleUpdate = (id) => {
-
-
-    }
+   
 
     return (
         <div className="overflow-x-auto my-12">
@@ -102,6 +99,7 @@ const MyToys = () => {
                         <th>Price</th>
                         <th>Available Quantity</th>
                         <th>Actions</th>
+                        
                     </tr>
                 </thead>
                 <tbody>

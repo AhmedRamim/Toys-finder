@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../public/logo1.png'
 import { AuthContext } from '../providers/AuthProvider';
+import { FaSignOutAlt } from 'react-icons/fa';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -12,7 +13,7 @@ const Navbar = () => {
     }
     // console.log(user);
     return (
-        <div className="navbar my-8 justify-between">
+        <div className="navbar py-8 justify-between">
             <div className="flex justify-between">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -82,7 +83,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden ml-56 lg:flex">
-                <ul className="menu menu-horizontal space-x-8 px-1 ">
+                <ul className="menu menu-horizontal items-center space-x-8 px-1 ">
                     <NavLink
                         to="/"
                         className={({ isActive }) =>
@@ -126,9 +127,9 @@ const Navbar = () => {
                         Blog
                     </NavLink>
                     {
-                        user && user ? <NavLink onClick={handleLogOut}
+                        user && user ? <NavLink className='bg-green-400 rounded-lg text-white font-bold flex gap-1 hover:bg-green-500 transition-all items-center  p-2' onClick={handleLogOut}
                         >
-                            LogOut
+                            <span>LogOut</span> <FaSignOutAlt></FaSignOutAlt>
                         </NavLink> : <NavLink
                             to="/login"
                             className={({ isActive }) =>

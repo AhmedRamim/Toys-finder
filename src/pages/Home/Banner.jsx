@@ -5,7 +5,7 @@ const Banner = () => {
         <div data-interval='6000' data-wrap='true' data-pause='true' className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src="https://i.ibb.co/jZFWstq/slider1.jpg" className="w-full" />
-                <div className=' md:w-[352px] md:h-[280px] border-red-500 border-4 absolute  right-24 top-[135px]'></div>
+                <div className=' md:w-[352px] md:h-[280px] border-green-500 border-4 absolute  right-24 top-[135px]'></div>
                 <span className='absolute md:right-32 md:top-[160px] w-auto md:max-w-[352px] md:bg-[#222] p-4 rounded text-center ml-20 '>
 
                     <div className='text-center space-y-3'>
@@ -25,7 +25,7 @@ const Banner = () => {
             </div>
             <div id="slide2" className="carousel-item relative w-full">
                 <img src="https://i.ibb.co/ZN6vmsH/slider2.jpg" className="w-full" />
-                <div className=' md:w-[352px] md:h-[280px] border-red-500 border-4 absolute  left-24 top-[135px]'></div>
+                <div className=' md:w-[352px] md:h-[280px] border-green-500 border-4 absolute  left-24 top-[135px]'></div>
                 <span className='absolute md:left-20 md:top-[160px] w-auto md:max-w-[352px] md:bg-[#222] p-4 rounded text-center ml-20 '>
                     
                     <div className='text-center space-y-3'>
@@ -45,7 +45,7 @@ const Banner = () => {
             </div>
             <div id="slide3" className="carousel-item relative w-full">
                 <img src="https://i.ibb.co/wRRZd9s/slider3.jpg" className="w-full" />
-                <div className=' md:w-[352px] md:h-[280px] border-red-500 border-4 absolute  right-24 top-[135px]'></div>
+                <div className=' md:w-[352px] md:h-[280px] border-green-500 border-4 absolute  right-24 top-[135px]'></div>
                 <span className='absolute md:right-32 md:top-[160px] w-auto md:max-w-[352px] md:bg-[#222] p-4 rounded text-center ml-20 '>
 
                     <div className='text-center space-y-3'>

@@ -1,65 +1,24 @@
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-
-
-
-import "./ImageGallery.css";
-import img1 from '../../../../public/img1.gif';
-import img2 from '../../../../public/img2.gif';
-import img3 from '../../../../public/img3.gif';
-import img4 from '../../../../public/img4.gif';
-import img5 from '../../../../public/img5.gif';
-import img6 from '../../../../public/img6.gif';
-// import required modules
-import { Pagination } from "swiper";
+import React from 'react';
+import './ImageGallery.css'
 const ImageGallery = () => {
-    return  (
-        <div className="my-20">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={10}
-            Pagination={{
-              clickable: true,
-            }}
-            breakpoints={{
-              "@0.00": {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              "@0.75": {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              "@1.00": {
-                slidesPerView: 3,
-                spaceBetween: 40,
-              },
-              "@1.50": {
-                slidesPerView: 4,
-                spaceBetween: 50,
-              },
-            }}
-            modules={[Pagination]}
-            className="mySwiper"
-          >
-            <SwiperSlide><img src={img1} alt="" /></SwiperSlide>
-            <SwiperSlide><img src={img2} alt="" /></SwiperSlide>
-            <SwiperSlide><img src={img3} alt="" /></SwiperSlide>
-            <SwiperSlide><img src={img4} alt="" /></SwiperSlide>
-            <SwiperSlide><img src={img5} alt="" /></SwiperSlide>
-            <SwiperSlide><img src={img6} alt="" /></SwiperSlide>
-            <div className="swiper-scrollbar"></div>
-          </Swiper>
+  return (
+    <div>
+      <h1 className='text-center font-bold text-5xl text-gray-600 mt-40 mb-12'>Our Latest Collection</h1>
+      <div className='flex items-center gap-10'>
+        <div className='w-1/2'>
+          <h1 className='text-5xl leading-[65px] font-semibold'>Discover  <span className='text-green-500'>Our Latest</span> Collection of Exciting Toys!</h1>
+          <p className='mt-6'>Discover our latest the thrill of toy collection! From interactive gadgets to exciting playsets, our newest arrivals are designed to captivate young minds and ignite imagination. Explore captivating puzzles, innovative STEM toys, and thrilling outdoor adventures. With something for every child, our latest toys promise endless hours of joy and entertainment. Shop now and experience the excitement of our newest additions!</p>
+          <p className='bg-green-400 p-3 rounded-md inline-block text-white font-bold mt-4 cursor-pointer'>Shop Now</p>
         </div>
-      );
+        <div className="gallery w-1/2 text-center overflow-hidden  h-[700px] flex items-center ">
+          <div className="img-box relative w-[100px] border-2 border-black h-[500px] t m-3 rounded-[50px] img"><h3 className="text-xl font-bold absolute bottom-3 " >Sports Car</h3></div>
+          <div className="img-box w-[100px] h-[500px] m-3 rounded-[50px] img1"><h3 className="text-xl font-bold" >Truck</h3></div>
+          <div className="img-box w-[100px] h-[500px] m-3 rounded-[50px] img2"><h3 className="text-xl font-bold text-black" >Jip</h3></div>
+          <div className="img-box w-[100px] h-[500px] m-3 rounded-[50px] img3"><h3 className="text-xl font-bold text-white" >Police Car</h3></div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ImageGallery;
-
-
-
-
-
-

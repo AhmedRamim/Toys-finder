@@ -3,8 +3,8 @@ import logo from '../../public/logo1.png'
 
 const Footer = () => {
     return (
-        <footer className=" bg-base-200">
-            <div className="footer p-10 bg-base-200 text-base-content">
+        <footer className="py-20">
+            <div className="footer p-10  text-base-content">
                 <div>
                     <img className='rounded-full w-1/2' src={logo} alt="" />
                     <p className='text-lg'>Toy's Finder <br /> Toy Industries Ltd.<br />Providing reliable tech since 1992</p>

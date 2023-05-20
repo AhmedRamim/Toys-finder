@@ -46,8 +46,8 @@ const AddToys = () => {
 
     }
     return (
-        <form onSubmit={handleAddToy} className=" rounded-lg mx-auto p-6 shadow-md  bg-slate-200 w-[900px]">
-            <h1 className='text-5xl font-semibold text-center mb-12'>Add A Toy</h1>
+        <form onSubmit={handleAddToy} className=" rounded-lg mx-auto p-6 shadow-md  bg-green-50 w-[900px]">
+            <h1 className='text-5xl font-semibold text-center font-mono text-gray-600 mb-12'>Add A Toy</h1>
           <div className="flex flex-wrap mb-4">
             <div className="w-1/2 pr-2">
               <label className="block text-sm font-bold mb-2" htmlFor="name">Toy Name:</label>
