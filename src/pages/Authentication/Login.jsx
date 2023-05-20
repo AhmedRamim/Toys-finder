@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import login from '../../../public/login.svg'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 const Login = () => {
     const {signIn,googleUser} = useContext(AuthContext)
     // console.log(user);
     const navigate = useNavigate()
+    const location = useLocation()
     const pathname = location.state?.from?.pathname || '/'
 
     const handleGoogle = () => {
@@ -27,7 +28,7 @@ const Login = () => {
         signIn(email,password)
         .then(result => {
             const loggedUser = result.user;
-            console.log(loggedUser);
+            navigate(pathname)
         })
         .catch(error => console.log(error))
     }

@@ -12,12 +12,15 @@ import AllToys from "../pages/AllToys/AllToys";
 import SingleToyDetails from "../pages/SingleToyDetails/SingleToyDetails";
 import MyToys from "../pages/MyToys/MyToys";
 import UpdatedToy from "../pages/UpdateToy/UpdatedToy";
+import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
   const Router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:'/',
@@ -45,12 +48,12 @@ import UpdatedToy from "../pages/UpdateToy/UpdatedToy";
         },
         {
           path:'/singleToys/:id',
-          element:<SingleToyDetails></SingleToyDetails>,
+          element:<PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>,
           loader:() => fetch(`http://localhost:5000/alltoys`)
         },
         {
           path:'myToys',
-          element:<MyToys></MyToys>
+          element:<PrivateRoute><MyToys></MyToys></PrivateRoute>
         },
         {
           path:'/updateToy/:id',
