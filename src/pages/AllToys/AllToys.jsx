@@ -9,7 +9,7 @@ const AllToys = () => {
     const [alltoys, setAlltoys] = useState([])
     const [searchText, setSearchText] = useState('')
     useEffect(() => {
-        fetch('http://localhost:5000/alltoys')
+        fetch('https://toys-car-server.vercel.app/alltoys')
             .then(res => res.json())
             .then(data => setAlltoys(data))
     }, [])
@@ -22,7 +22,7 @@ const AllToys = () => {
                 confirmButtonText: 'Ok'
             })
         }
-        fetch(`http://localhost:5000/toySearchByName/${text}`)
+        fetch(`https://toys-car-server.vercel.app/toySearchByName/${text}`)
             .then(res => res.json())
             .then(data => setAlltoys(data))
     }
@@ -33,7 +33,7 @@ const AllToys = () => {
                 <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
                 <button onClick={() => handleSearch(searchText)} className='btn btn-success ml-2 text-white'>Search</button>
             </div>
-            <div className="overflow-x-auto my-12">
+            <div className="overflow-x-auto mt-12 mb-36">
                 <table className="table w-full">
                     {/* head*/}
                     <thead>

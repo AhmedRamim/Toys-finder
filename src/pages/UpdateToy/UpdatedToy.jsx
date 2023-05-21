@@ -22,7 +22,7 @@ const UpdatedToy = () => {
         const description = form.description.value;
 
         const updateToy = {name,sellerName,sellerEmail,subCategory,photoURL,price,rating,quantity,description}
-        fetch(`http://localhost:5000/updateToy/${allData?._id}`,{
+        fetch(`https://toys-car-server.vercel.app/updateToy/${allData?._id}`,{
             method:"PUT",
             headers:{
                 'content-type':'application/json'
@@ -42,7 +42,7 @@ const UpdatedToy = () => {
         })
     }
     return (
-        <form onSubmit={handleAddToy} className=" rounded-lg mx-auto p-6 shadow-md  bg-slate-200 w-[900px]">
+        <form onSubmit={handleAddToy} className=" rounded-lg mx-auto p-6 shadow-md  bg-slate-200 md:w-[900px]">
             <h1 className='text-5xl font-semibold text-center mb-12'>Update A Toy</h1>
             <div className="flex flex-wrap mb-4">
                 <div className="w-1/2 pr-2">

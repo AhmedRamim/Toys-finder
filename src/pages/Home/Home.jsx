@@ -4,6 +4,8 @@ import ImageGallery from './Gallery/ImageGallery';
 import useTitle from '../../hooks/useTitle';
 
 import ShopByCategory from '../ShopByCategory/ShopByCategory';
+import Testimonial from '../Testimonial/Testimonial';
+import ToyGallery from '../ToyGallery/ToyGallery';
 
 
 const Home = () => {
@@ -14,6 +16,8 @@ const Home = () => {
             <Banner></Banner>
             <ImageGallery></ImageGallery>
             <ShopByCategory></ShopByCategory>
+            <ToyGallery></ToyGallery>
+            <Testimonial></Testimonial>
         </div>
     );
 };

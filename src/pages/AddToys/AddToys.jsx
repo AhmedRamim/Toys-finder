@@ -21,7 +21,7 @@ const AddToys = () => {
 
         const addToys = {name,sellerName,sellerEmail,subCategory,photoURL,price,rating,quantity,description}
         
-        fetch('http://localhost:5000/addToys',{
+        fetch('https://toys-car-server.vercel.app/addToys',{
             method:"POST",
             headers:{
                 'content-type':'application/json'
@@ -46,7 +46,7 @@ const AddToys = () => {
 
     }
     return (
-        <form onSubmit={handleAddToy} className=" rounded-lg mx-auto p-6 shadow-md  bg-green-50 w-[900px]">
+        <form onSubmit={handleAddToy} className=" rounded-lg mx-auto p-6 shadow-md  bg-green-50 md:w-[900px]">
             <h1 className='text-5xl font-semibold text-center font-mono text-gray-600 mb-12'>Add A Toy</h1>
           <div className="flex flex-wrap mb-4">
             <div className="w-1/2 pr-2">

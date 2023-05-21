@@ -49,7 +49,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
         {
           path:'/singleToys/:id',
           element:<PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>,
-          loader:() => fetch(`http://localhost:5000/alltoys`)
+          loader:() => fetch(`https://toys-car-server.vercel.app/alltoys`)
         },
         {
           path:'myToys',
@@ -58,7 +58,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
         {
           path:'/updateToy/:id',
           element:<PrivateRoute><UpdatedToy></UpdatedToy></PrivateRoute>,
-          loader:({params}) => fetch(`http://localhost:5000/updateToy/${params.id}`)
+          loader:({params}) => fetch(`https://toys-car-server.vercel.app/updateToy/${params.id}`)
         }
       ]
     },

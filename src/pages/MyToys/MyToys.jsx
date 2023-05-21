@@ -24,7 +24,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/toy/${id}`, {
+                fetch(`https://toys-car-server.vercel.app/toy/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -47,7 +47,7 @@ const MyToys = () => {
     }
 
     useEffect(() => {
-        let apiUrl = `http://localhost:5000/myToys/${user?.email}`;
+        let apiUrl = `https://toys-car-server.vercel.app/myToys/${user?.email}`;
 
         if (sortBy) {
             apiUrl += `?sortBy=${sortBy}`;
