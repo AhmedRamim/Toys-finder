@@ -1,6 +1,4 @@
-.testimonial-container {
-  /* Add container styles if needed */
-}
+
 
 .testimonial-item {
   /* Add item styles if needed */
@@ -28,9 +26,7 @@
   object-fit: cover;
 }
 
-.testimonial-details {
-  /* Add details styles if needed */
-}
+
 
 .testimonial-name {
   font-size: 18px;
@@ -43,12 +39,10 @@
   margin-bottom: 10px;
 }
 
-.testimonial-review {
-  /* Add review styles if needed */
-}
+
 
 blockquote {
-  font-size: 16px;
+  font-size: 18px;
   font-style: italic;
   color: #555555;
   margin: 0;

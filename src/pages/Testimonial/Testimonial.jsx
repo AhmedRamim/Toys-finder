@@ -22,7 +22,7 @@ const Testimonial = () => {
       name: "Naila Ahmed",
       title: "Satisfied Client",
       image: 'https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?w=740&t=st=1684645673~exp=1684646273~hmac=6d28736372a556dbdbe9457942202a9adde29f8a222cd205fc92ef7b390092d9',
-      review: "I've been a customer for several years and they never disappoint. Excellent products and top-notch customer support.",
+      review: "I've been a customer for several years and they never disappoint. Excellent products and top-notch  support.",
     },
     {
       id: 3,
@@ -75,32 +75,34 @@ const Testimonial = () => {
         modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
       >
-        {testimonials.map((testimonial) => (
-          <SwiperSlide key={testimonial.id}>
-            <div className="testimonial-item p-10 rounded-lg">
-              <div className="testimonial-content">
+        <div className="p-4 md:p-0">
+          {testimonials.map((testimonial) => (
+            <SwiperSlide key={testimonial.id}>
+              <div className="testimonial-item  p-10 rounded-lg">
+                <div className="testimonial-content">
 
-                <div className="testimonial-details">
+                  <div className="testimonial-details">
 
-                  <div className="testimonial-review">
-                    <blockquote className="flex">
-                      <span className="quote-icon"><FaQuoteLeft /></span>
-                      <p className="testimonial-text">{testimonial.review}</p>
-                      <br />
-                      <span className="quote-icon1"><FaQuoteRight /></span>
-                    </blockquote>
+                    <div className="testimonial-review">
+                      <blockquote className="flex">
+                        <span className="quote-icon"><FaQuoteLeft /></span>
+                        <p className="testimonial-text">{testimonial.review}</p>
+                        <br />
+                        <span className="quote-icon1"><FaQuoteRight /></span>
+                      </blockquote>
+                    </div>
+
                   </div>
-
+                  <div className="testimonial-image mt-4">
+                    <img src={testimonial.image} alt={testimonial.name} />
+                  </div>
+                  <h3 className="testimonial-name">{testimonial.name}</h3>
+                  <p className="testimonial-title">{testimonial.title}</p>
                 </div>
-                <div className="testimonial-image mt-4">
-                  <img src={testimonial.image} alt={testimonial.name} />
-                </div>
-                <h3 className="testimonial-name">{testimonial.name}</h3>
-                <p className="testimonial-title">{testimonial.title}</p>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
+            </SwiperSlide>
+          ))}
+        </div>
       </Swiper>
     </div>
   );
