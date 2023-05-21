@@ -36,8 +36,8 @@ const ToyGallery = () => {
                     <div data-aos="fade-up"
                         data-aos-easing="linear"
                         data-aos-duration="1000" key={image.id} className="relative">
-                        <img className="w-[400px] h-[300px] rounded-2xl overflow-hidden" src={image.src} alt={image.name} />
-                        <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-500  hover:opacity-50 rounded-2xl flex items-center justify-center w-[400px]">
+                        <img className="md:w-[400px] h-[300px] rounded-2xl overflow-hidden" src={image.src} alt={image.name} />
+                        <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-500  hover:opacity-50 rounded-2xl flex items-center justify-center md:w-[400px]">
                             <div className="text-white text-center">
                                 <h3 className="text-lg font-bold">{image.name}</h3>
                                 <button className="bg-green-400 hover:opacity-100 text-black px-4 py-2 rounded-md mt-2">Buy Now</button>

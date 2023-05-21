@@ -13,7 +13,7 @@ const Navbar = () => {
     }
     // console.log(user);
     return (
-        <div className="navbar py-8 justify-between">
+        <div className="navbar sticky z-40 bg-[#f0f6f0] top-0 h-[100px] justify-between">
             <div className="flex justify-between">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

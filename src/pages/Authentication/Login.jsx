@@ -5,8 +5,8 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import useTitle from '../../hooks/useTitle';
 const Login = () => {
-    useTitle("Toy's Finder" + '|'+'login')
-    const {signIn,googleUser} = useContext(AuthContext)
+    useTitle("Toy's Finder" + '|' + 'login')
+    const { signIn, googleUser } = useContext(AuthContext)
     // console.log(user);
     const navigate = useNavigate()
     const location = useLocation()
@@ -27,20 +27,24 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        signIn(email,password)
-        .then(result => {
-            const loggedUser = result.user;
-            navigate(pathname)
-        })
-        .catch(error => console.log(error))
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                navigate(pathname)
+            })
+            .catch(error => console.log(error))
     }
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
-                <div className=" md:mr-36 md:w-1/2">
+                <div data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000" className=" md:mr-36 md:w-1/2">
                     <img className='w-[600px]' src={login} alt="" />
                 </div>
-                <div className="card  md:w-1/2  shadow-2xl bg-base-100">
+                <div data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="1000" className="card  md:w-1/2  shadow-2xl bg-base-100">
                     <h1 className="text-5xl font-bold text-center py-6">Login now!</h1>
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">

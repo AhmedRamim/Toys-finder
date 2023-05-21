@@ -40,7 +40,7 @@ const ShopByCategory = () => {
     // console.log(tabData);
     return (
         <div className='md:my-40 p-5 md:p-0'>
-            <h1 data-aos="fade-left"
+            <h1 data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="1500" className='text-5xl text-gray-600 font-bold text-center my-28'>Shop by category</h1>
             <Tabs>
@@ -113,7 +113,7 @@ const ShopByCategory = () => {
                         {
                             tabData.map(data => {
                                 return <div key={data._id} className="card w-full md:w-96 my-6 md:my-0 bg-base-100 hover:shadow-2xl hover:transition-all duration-500">
-                                    <figure><img src={data.photoURL} alt="Loading..." /></figure>
+                                    <figure className='h-[300px]'><img src={data.photoURL} alt="Loading..." /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{data.name}</h2>
                                         <p><span>Price:</span>${data.price}</p>

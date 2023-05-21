@@ -56,9 +56,9 @@ const Testimonial = () => {
 
   return (
     <div className="testimonial-container mb-32">
-      <h1 data-aos="fade-left"
+      <h1 data-aos="fade-up"
         data-aos-easing="linear"
-        data-aos-duration="1500" className="text-5xl font-bold text-center mb-32 mt-48">Customer Review</h1>
+        data-aos-duration="1500" className="text-3xl md:text-5xl font-bold text-center mb-32 mt-48">Customer Review</h1>
       <Swiper
         slidesPerView={1}
         spaceBetween={10}

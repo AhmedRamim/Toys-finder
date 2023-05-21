@@ -2,9 +2,11 @@ import React from 'react';
 import useTitle from '../../hooks/useTitle';
 
 const Blog = () => {
-    useTitle("Toy's Finder" + ' - '+'blog')
+    useTitle("Toy's Finder" + ' - ' + 'blog')
     return (
-        <div className='my-20 space-y-12'>
+        <div data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000" className='my-20 space-y-12'>
             <div className='space-y-3 shadow-xl rounded-lg p-4 bg-white'>
                 <h1 className='text-3xl font-semibold'>What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>
                 <p>An access token is a short-lived credential that allows a user or application to access protected resources in an application. It is obtained during the authentication process and needs to be included with each request to the server.
@@ -26,9 +28,9 @@ const Blog = () => {
             <div className='space-y-3 shadow-xl rounded-lg p-4 bg-white'>
                 <h1 className='text-3xl font-semibold'>What is express js? What is Nest JS ?</h1>
                 <p>Express.js is a lightweight and flexible web application framework that runs on Node.js. It simplifies the process of building web applications and APIs by providing an easy-to-use and minimalist approach. With Express.js, developers can handle routes, middleware, and HTTP requests with ease. It is known for its simplicity, speed, and extensive middleware ecosystem, making it a popular choice for building server-side applications.
-<br />
+                    <br />
                     NestJS, on the other hand, is a TypeScript-based web application framework that draws inspiration from Angular's architecture and concepts. It provides a structured and modular approach to building server-side applications. NestJS leverages decorators, dependency injection, and modules to create highly maintainable and scalable codebases. It supports various application types, including RESTful APIs, real-time applications with WebSockets, and GraphQL APIs. NestJS also offers features like built-in validation, error handling, and unit testing support.
-<br />
+                    <br />
                     In summary, Express.js focuses on simplicity and flexibility, allowing developers to quickly build web applications, while NestJS provides a more structured and opinionated framework with TypeScript support, suitable for larger projects and teams that prioritize maintainability and scalability.</p>
             </div>
             <div className='space-y-3 shadow-xl rounded-lg p-4 bg-white'>

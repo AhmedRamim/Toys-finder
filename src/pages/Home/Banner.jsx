@@ -10,7 +10,7 @@ const Banner = () => {
                     data-aos-easing="linear"
                     data-aos-duration="1500" className='absolute md:right-32 md:top-[160px] w-auto md:max-w-[352px] md:bg-[#222] p-4 rounded text-center ml-20 '>
 
-                    <div data-aos="fade-left"
+                    <div data-aos="fade-up"
                         data-aos-easing="linear"
                         data-aos-duration="2000" className='text-center space-y-3'>
                         <h1 className='md:text-7xl text-white  font-semibold'>REMOTE CAR</h1>

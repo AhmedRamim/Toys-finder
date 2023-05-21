@@ -5,7 +5,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 
 const SingleToyDetails = () => {
-    useTitle("Toy's Finder" + ' - '+'singleToy')
+    useTitle("Toy's Finder" + ' - ' + 'singleToy')
     const allData = useLoaderData()
     const { id } = useParams()
     const singleData = allData && allData.find(data => data._id === id)
@@ -15,8 +15,12 @@ const SingleToyDetails = () => {
     } = singleData
     return (
         <div className="card lg:card-side bg-base-100 shadow-xl">
-            <figure className='w-1/2'><img className='w-full' src={photoURL} alt="Album" /></figure>
-            <div className="card-body w-1/2">
+            <figure data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1000" className='w-1/2'><img className='w-full' src={photoURL} alt="Album" /></figure>
+            <div data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1000" className="card-body w-1/2">
                 <h2 className="card-title"><span className='font-bold'>Toy Name:</span>{name}</h2>
                 <h1><span className='font-bold'>Seller Name: </span>{sellerName}</h1>
                 <h1><span className='font-bold'>Seller Email: </span>{sellerEmail}</h1>

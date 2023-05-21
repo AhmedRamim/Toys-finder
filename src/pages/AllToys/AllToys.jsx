@@ -40,19 +40,21 @@ const AllToys = () => {
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Yes'
             }).then((result) => {
-               
+
                 if (result.isConfirmed) {
-                   return navigate(`/singleToys/${id}`)
+                    return navigate(`/singleToys/${id}`)
                 }
             })
         }
-        else{
+        else {
             navigate(`/singleToys/${id}`)
         }
     }
     // console.log(alltoys);
     return (
-        <div>
+        <div data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000">
             <div className='text-center'>
                 <input onChange={(e) => setSearchText(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
                 <button onClick={() => handleSearch(searchText)} className='btn btn-success ml-2 text-white'>Search</button>
@@ -83,8 +85,8 @@ const AllToys = () => {
                                     <td>${toy.price}</td>
                                     <td>{toy.quantity}</td>
                                     <td>
-                                       
-                                        <span onClick={() =>handleDetails(toy._id)} className='bg-success p-2 text-white font-semibold cursor-pointer rounded-lg'>Details</span>
+
+                                        <span onClick={() => handleDetails(toy._id)} className='bg-success p-2 text-white font-semibold cursor-pointer rounded-lg'>Details</span>
                                     </td>
                                 </tr>
                             })

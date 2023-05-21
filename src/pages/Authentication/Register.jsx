@@ -17,7 +17,7 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photoUrl = form.photoUrl.value;
-        
+
         setError('')
 
         if (password.length < 6) {
@@ -28,8 +28,8 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createUser = result.user;
-                
-                updateUserProfiles(name,photoUrl)
+
+                updateUserProfiles(name, photoUrl)
                 form.reset()
                 navigate(pathname)
 
@@ -53,22 +53,24 @@ const Register = () => {
                 console.log(error);
             })
     }
-   
+
 
     // const 
     return (
 
         <div className='w-[80%] mx-auto'>
-            
-            <div className="hero  min-h-screen ">
+
+            <div data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1000" className="hero  min-h-screen ">
                 <div className="hero-content flex-col mt-6">
                     <div className="">
                         <h1 className="text-5xl font-bold my-6">Register now!</h1>
-                        
+
                     </div>
                     <ToastContainer></ToastContainer>
                     <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
-                        <form onSubmit={handleSubmit} className="card-body w-[600px]">
+                        <form onSubmit={handleSubmit} className="card-body md:w-[600px]">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -102,8 +104,8 @@ const Register = () => {
 
                             <p>Already have an account? <Link className='btn btn-link' to='/login'>Login</Link></p>
                         </form>
-                        
-                       
+
+
                     </div>
                 </div>
             </div>
