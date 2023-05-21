@@ -56,13 +56,13 @@ const MyToys = () => {
         fetch(apiUrl)
             .then((res) => res.json())
             .then((data) => {
-                // Parse price values as integers
+              
                 const parsedData = data.map((toy) => ({
                     ...toy,
                     price: parseInt(toy.price),
                 }));
 
-                // Sort toys based on price
+               
                 if (sortBy === 'lower') {
                     parsedData.sort((a, b) => a.price - b.price);
                 } else if (sortBy === 'higher') {

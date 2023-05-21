@@ -12,23 +12,27 @@ const ShopByCategory = () => {
             .then(res => res.json())
             .then(data => setTabData(data))
     }, [tab])
-    console.log(tabData);
+    // console.log(tabData);
     return (
         <div className='md:my-40 p-5 md:p-0'>
-            <h1 className='text-5xl text-gray-600 font-bold text-center my-28'>Shop by category</h1>
+            <h1 data-aos="fade-left"
+                data-aos-easing="linear"
+                data-aos-duration="1500" className='text-5xl text-gray-600 font-bold text-center my-28'>Shop by category</h1>
             <Tabs>
                 <TabList className='text-center'>
                     <Tab onClick={() => setTab('Truck')} >Truck</Tab>
                     <Tab onClick={() => setTab('Sports car')} >Sports car</Tab>
                     <Tab onClick={() => setTab('Mini Police car')} >Mini Police car</Tab>
-                    <hr className='border-2'/>
+                    <hr className='border-2' />
                 </TabList>
 
                 <TabPanel>
-                    <div className='md:flex gap-8 mt-12 justify-center'>
+                    <div className='md:flex flex-wrap  gap-8 mt-12 justify-center'>
                         {
                             tabData.map(data => {
-                                return <div key={data._id} className="card w-full md:w-96 bg-base-100 my-6 md:my-0 hover:shadow-2xl hover:transition-shadow duration-700">
+                                return <div data-aos="fade-down"
+                                    data-aos-easing="linear"
+                                    data-aos-duration="1000" key={data._id} className="card w-full md:w-96 bg-base-100 my-6 md:my-0 hover:shadow-2xl hover:transition-shadow duration-700">
                                     <figure><img src={data.photoURL} alt="Loading..." /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title">{data.name}</h2>
@@ -52,7 +56,7 @@ const ShopByCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='md:flex gap-8 mt-12 justify-center'>
+                    <div className='md:flex flex-wrap gap-8 mt-12 justify-center'>
                         {
                             tabData.map(data => {
                                 return <div key={data._id} className="card w-full md:w-96 my-6 md:my-0  bg-base-100  hover:shadow-2xl hover:transition-all duration-500">
@@ -78,7 +82,7 @@ const ShopByCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='md:flex gap-8 mt-12 items-center justify-center'>
+                    <div className='md:flex flex-wrap gap-8 mt-12 items-center justify-center'>
                         {
                             tabData.map(data => {
                                 return <div key={data._id} className="card w-full md:w-96 my-6 md:my-0 bg-base-100 hover:shadow-2xl hover:transition-all duration-500">

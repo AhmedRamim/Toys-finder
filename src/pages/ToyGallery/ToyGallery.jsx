@@ -28,10 +28,14 @@ const ToyGallery = () => {
     const slice = seeAll ? images.slice(0, 6) : images
     return (
         <div>
-            <h1 className='text-5xl font-bold text-center text-gray-600 mb-28 mt-40'>Our Toy Gallery</h1>
+            <h1 data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500" className='text-5xl font-bold text-center text-gray-600 mb-28 mt-40'>Our Toy Gallery</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {slice.map((image) => (
-                    <div key={image.id} className="relative">
+                    <div data-aos="fade-up"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000" key={image.id} className="relative">
                         <img className="w-[400px] h-[300px] rounded-2xl overflow-hidden" src={image.src} alt={image.name} />
                         <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-500  hover:opacity-50 rounded-2xl flex items-center justify-center w-[400px]">
                             <div className="text-white text-center">
@@ -42,8 +46,8 @@ const ToyGallery = () => {
                     </div>
                 ))}
             </div>
-            <div  className='text-center my-12 '>
-                <p onClick={() => setSeeAll(false)} className={`bg-green-400 cursor-pointer p-3 text-white font-bold rounded-md  inline-block hover:bg-green-500 ${seeAll ? '' :'hidden'}`}>See All</p>
+            <div className='text-center my-12 '>
+                <p onClick={() => setSeeAll(false)} className={`bg-green-400 cursor-pointer p-3 text-white font-bold rounded-md  inline-block hover:bg-green-500 ${seeAll ? '' : 'hidden'}`}>See All</p>
             </div>
         </div>
     );

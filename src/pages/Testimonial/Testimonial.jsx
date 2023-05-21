@@ -37,12 +37,28 @@ const Testimonial = () => {
       title: "Satisfied Client",
       image: 'https://img.freepik.com/free-photo/portrait-smiling-handsome-man-eyeglasses_171337-4853.jpg?w=1060&t=st=1684645888~exp=1684646488~hmac=fd23860b43fe56816a5d427a1ba849f424ef38a4c32e968b5992c31f5089bf28',
       review: "I couldn't be happier with their service. The team went above and beyond to ensure my satisfaction.",
+    },
+    {
+      id: 5,
+      name: "Naim Khan",
+      title: "Happy Customer",
+      image: 'https://img.freepik.com/free-photo/isolated-image-positive-fashionable-young-man-with-stylish-hairdo-bristle-smiling-camera_343059-3558.jpg?w=1060&t=st=1684645740~exp=1684646340~hmac=b30fafca8f9c8d06cb15c286dd827222042fd9395896b7f87daec83f06529104',
+      review: "Their attention to detail is impressive. I keep coming back for more because of their exceptional quality.",
+    },
+    {
+      id: 6,
+      name: "S Jahan",
+      title: "Satisfied Client",
+      image: 'https://img.freepik.com/free-photo/portrait-smiling-handsome-man-eyeglasses_171337-4853.jpg?w=1060&t=st=1684645888~exp=1684646488~hmac=fd23860b43fe56816a5d427a1ba849f424ef38a4c32e968b5992c31f5089bf28',
+      review: "I couldn't be happier with their service. The team went above and beyond to ensure my satisfaction.",
     }
   ];
 
   return (
     <div className="testimonial-container mb-32">
-      <h1 className="text-5xl font-bold text-center mb-32 mt-48">Customer Review</h1>
+      <h1 data-aos="fade-left"
+        data-aos-easing="linear"
+        data-aos-duration="1500" className="text-5xl font-bold text-center mb-32 mt-48">Customer Review</h1>
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -78,7 +94,9 @@ const Testimonial = () => {
         <div className="p-4 md:p-0">
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
-              <div className="testimonial-item  p-10 rounded-lg">
+              <div data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500" className="testimonial-item hover:shadow-2xl  p-10 rounded-lg">
                 <div className="testimonial-content">
 
                   <div className="testimonial-details">
