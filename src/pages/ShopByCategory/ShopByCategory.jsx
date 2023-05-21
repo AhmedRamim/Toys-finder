@@ -1,17 +1,42 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
+import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 const ShopByCategory = () => {
+    const {user} = useContext(AuthContext)
     const [tab, setTab] = useState('Truck')
     const [tabData, setTabData] = useState([])
+    const navigate = useNavigate()
     useEffect(() => {
         fetch(`https://toys-car-server.vercel.app/tab/${tab}`)
             .then(res => res.json())
             .then(data => setTabData(data))
     }, [tab])
+    const handleDetails = (id) => {
+        if (!user) {
+            Swal.fire({
+                title: ' You are not logged In',
+                text: "You have to log in first to view details",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+                    return navigate(`/singleToys/${id}`)
+                }
+            })
+        }
+        else {
+            navigate(`/singleToys/${id}`)
+        }
+    }
     // console.log(tabData);
     return (
         <div className='md:my-40 p-5 md:p-0'>
@@ -45,9 +70,11 @@ const ShopByCategory = () => {
                                             readonly
                                         /> {data.rating}</p>
 
-                                        <Link to={`/singleToys/${data._id}`}>
-                                            <p className="bg-green-400 p-3 rounded-lg text-white inline-block ">View Details</p>
-                                        </Link>
+
+                                        <div className="inline-block">
+                                            <p onClick={() => handleDetails(data._id)} className="bg-green-400 p-3 rounded-lg cursor-pointer text-white  inline-block ">View Details</p>
+                                        </div>
+
 
                                     </div>
                                 </div>
