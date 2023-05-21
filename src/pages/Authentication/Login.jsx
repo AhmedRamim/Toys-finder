@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import login from '../../../public/login.svg'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import useTitle from '../../hooks/useTitle';
+import login from '../../../public/register.png';
 const Login = () => {
     useTitle("Toy's Finder" + '|' + 'login')
     const { signIn, googleUser } = useContext(AuthContext)

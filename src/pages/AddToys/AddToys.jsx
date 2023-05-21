@@ -48,7 +48,7 @@ const AddToys = () => {
   return (
     <form data-aos="fade-up"
       data-aos-easing="linear"
-      data-aos-duration="1000" onSubmit={handleAddToy} className=" rounded-lg mx-auto p-6 shadow-md  bg-green-50 md:w-[900px]">
+      data-aos-duration="1000" onSubmit={handleAddToy} className="md:my-16 rounded-lg mx-auto p-6 shadow-md  bg-green-50 md:w-[900px]">
       <h1 className='text-5xl font-semibold text-center font-mono text-gray-600 mb-12'>Add A Toy</h1>
       <div className="flex flex-wrap mb-4">
         <div className="w-1/2 pr-2">

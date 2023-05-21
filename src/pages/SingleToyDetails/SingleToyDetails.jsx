@@ -10,17 +10,17 @@ const SingleToyDetails = () => {
     const { id } = useParams()
     const singleData = allData && allData.find(data => data._id === id)
 
-    console.log(singleData);
+    // console.log(singleData);
     const { photoURL, name, quantity, price, rating, description, sellerName, sellerEmail, subCategory
     } = singleData
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
+        <div className="card lg:card-side my-20 bg-white shadow-xl">
             <figure data-aos="fade-up"
                 data-aos-easing="linear"
-                data-aos-duration="1000" className='w-1/2'><img className='w-full' src={photoURL} alt="Album" /></figure>
+                data-aos-duration="1000" className='md:w-1/2 rounded-xl'><img className='w-full p-4 rounded-lg' src={photoURL} alt="Album" /></figure>
             <div data-aos="fade-up"
                 data-aos-easing="linear"
-                data-aos-duration="1000" className="card-body w-1/2">
+                data-aos-duration="1000" className="card-body md:w-1/2">
                 <h2 className="card-title"><span className='font-bold'>Toy Name:</span>{name}</h2>
                 <h1><span className='font-bold'>Seller Name: </span>{sellerName}</h1>
                 <h1><span className='font-bold'>Seller Email: </span>{sellerEmail}</h1>

@@ -31,7 +31,7 @@ const ToyGallery = () => {
             <h1 data-aos="fade-up"
                 data-aos-easing="linear"
                 data-aos-duration="1500" className='text-5xl font-bold text-center text-gray-600 mb-28 mt-40'>Our Toy Gallery</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 md:px-0">
                 {slice.map((image) => (
                     <div data-aos="fade-up"
                         data-aos-easing="linear"
